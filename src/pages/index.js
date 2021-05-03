@@ -1,4 +1,5 @@
 import * as React from "react";
+import Header from "../components/layout-elements/header";
 import "../styles/styles.scss";
 
 // styles
@@ -6,7 +7,7 @@ import "../styles/styles.scss";
 const IndexPage = () => {
   return (
     <main>
-      <div className="w-24 h-24 bg-black"></div>
+      <Header />
     </main>
   );
 };

@@ -9,3 +9,16 @@
 }
 @layer base {
 }
+.curtain-item-mobile {
+  position: relative;
+  &::after {
+    content: "";
+    position: absolute;
+    background-color: #ffffff;
+    height: 1px;
+    width: 60%;
+    left: 50%;
+    bottom: -1px;
+    transform: translate(-50%, -50%);
+  }
+}
