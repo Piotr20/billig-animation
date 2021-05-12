@@ -8,6 +8,18 @@
   box-sizing: border-box;
 }
 @layer base {
+  .container {
+    @apply mx-auto;
+  }
+  h2 {
+    @apply text-5xl md:text-7xl xl:text-8xl font-bold;
+  }
+  h3 {
+    @apply text-2xl md:text-4xl xl:text-6xl font-semibold;
+  }
+  p {
+    @apply text-lg md:text-xl xl:text-2xl;
+  }
 }
 .curtain-item-mobile {
   position: relative;
@@ -21,4 +33,14 @@
     bottom: -1px;
     transform: translate(-50%, -50%);
   }
+}
+.selling-point-box {
+  background-color: rgba(255, 255, 255, 0.6);
+  transition: background-color 0.2s ease;
+  &:hover {
+    background-color: #ffffff;
+  }
+}
+.carousel .control-next.control-arrow:before {
+  border-color: #171717;
 }

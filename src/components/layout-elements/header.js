@@ -2,7 +2,8 @@ import React, { useState } from "react";
 import { RiMenuFill, RiCloseFill } from "react-icons/Ri";
 import { graphql, useStaticQuery } from "gatsby";
 import { Link } from "gatsby";
-import LogoBlack from "../Logo-black";
+import Logo from "../Logo";
+import ShapeGroup from "../shapeGroup";
 
 const Header = () => {
   const [showNav, setShowNav] = useState(false);
@@ -25,38 +26,32 @@ const Header = () => {
       }
     }
   `);
-  console.log(data);
+
   const danskMenu = data.allWpMenu.nodes[0].menuItems.nodes;
-  console.log(danskMenu);
+
   return (
-    <header className="w-full h-20 px-8 lg:px-10 2xl:px-12 flex  items-center justify-between">
+    <header className="w-full h-20 px-8 lg:px-10 2xl:px-24 flex items-center justify-between shadow-md fixed top-0 left-0 z-50 bg-white">
       <nav className=" flex items-center justify-between w-full h-full">
-        <Link to="/">
-          <LogoBlack />
+        <Link className={`w-28 h-12 md:w-36 `} to="/">
+          <Logo type="black" />
         </Link>
-        <ul className="hidden md:flex">
+
+        <ul className="hidden md:flex font-semibold">
           {danskMenu.map((menuItem, key) => {
-            return menuItem.order < 4 ? (
-              <Link to={menuItem.url}>
-                <li className="md:text-lg 2xl:text-2xl px-4" key={key}>
+            return (
+              <Link
+                key={menuItem.id}
+                className={` py-2${
+                  menuItem.order === 5
+                    ? ` bg-black text-white hover:bg-white hover:text-black transition-colors duration-300 rounded-2xl md:rounded-3xl xl:rounded-4xl py-2 px-1 shadow-custom`
+                    : ``
+                }`}
+                to={menuItem.url}
+              >
+                <li className="md:text-lg 2xl:text-xl md:px-6 2xl:px-8 md:mx-1 xl:mx-2">
                   {menuItem.label}
                 </li>
               </Link>
-            ) : (
-              ""
-            );
-          })}
-        </ul>
-        <ul className="hidden md:flex">
-          {danskMenu.map((menuItem, key) => {
-            return menuItem.order > 3 ? (
-              <Link to={menuItem.url}>
-                <li className="md:text-lg 2xl:text-2xl px-4" key={key}>
-                  {menuItem.label}
-                </li>
-              </Link>
-            ) : (
-              ""
             );
           })}
         </ul>
@@ -72,15 +67,14 @@ const Header = () => {
         <button className=" self-end" onClick={() => setShowNav(!showNav)}>
           <RiCloseFill className="text-5xl mr-4 mt-4 text-white" />
         </button>
-        <ul className=" text-center text-3xl -mt-8">
+        <ul className=" text-center text-3xl -mt-8 font-semibold ">
           {danskMenu.map((menuItem, key) => {
             return (
-              <Link to={menuItem.url}>
+              <Link key={menuItem.id} to={menuItem.url}>
                 <li
-                  className={`md:text-lg 2xl:text-2xl text-white py-5  ${
+                  className={`md:text-lg 2xl:text-xl text-white py-5  ${
                     menuItem.order < 5 ? `curtain-item-mobile` : ``
                   }`}
-                  key={key}
                 >
                   {menuItem.label}
                 </li>
@@ -88,7 +82,8 @@ const Header = () => {
             );
           })}
         </ul>
-        <div>
+        <div className="flex flex-col items-center">
+          <ShapeGroup />
           <h3 className="md:text-lg pb-12 text-white text-center">
             Billig Animation © 2021
           </h3>

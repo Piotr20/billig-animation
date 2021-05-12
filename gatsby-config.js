@@ -7,6 +7,9 @@ module.exports = {
       resolve: "gatsby-source-wordpress",
       options: {
         url: "http://billig-animation.local/graphql",
+        type: {
+          BlockEditorContentNode: { exclude: true },
+        },
       },
     },
     "gatsby-plugin-sass",
