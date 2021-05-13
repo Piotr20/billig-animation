@@ -43,10 +43,10 @@ const Footer = () => {
   `);
 
   const contentBlocks = footerContentQuery.allWpPost.edges[0].node.blocks;
-  console.log(contentBlocks);
+
   return (
-    <footer className="bg-black mt-4 md:mt-12">
-      <div className="container relative text-white">
+    <footer className="bg-black mt-4 md:mt-12 w-full">
+      <div className="container relative text-white md:py-6 w-full">
         <Link
           className={`w-40 py-6 md:py-8 md:w-40 xl:w-56 inline-block`}
           to="/"
@@ -55,19 +55,23 @@ const Footer = () => {
         </Link>
         <ShapeGroup className="absolute right-8 top-0 transform -translate-y-1/2 scale-150 md:scale-200 xl:scale-250" />
         <div className="w-full  md:flex md:justify-between">
-          <div className="">
-            <p className=" max-w-short-text">
+          <div className=" text-white">
+            <p className=" text-white max-w-short-text">
               {contentBlocks[0].attributes.content}
             </p>
             <div className="py-4 lg:py-8">
               <a href={`tel:${contentBlocks[1].attributes.content}`}>
-                <p>{contentBlocks[1].attributes.content}</p>
+                <p className="text-white">
+                  {contentBlocks[1].attributes.content}
+                </p>
               </a>
               <a
                 className=" underline"
                 href={`mailTo:${contentBlocks[2].attributes.content}`}
               >
-                <p>{contentBlocks[2].attributes.content}</p>
+                <p className="text-white">
+                  {contentBlocks[2].attributes.content}
+                </p>
               </a>
             </div>
           </div>
@@ -83,8 +87,8 @@ const Footer = () => {
             </div>
           </div>
           <div className="py-8 lg:py-0">
-            <p>{contentBlocks[3].attributes.content}</p>
-            <p>{contentBlocks[4].attributes.content}</p>
+            <p className="text-white">{contentBlocks[3].attributes.content}</p>
+            <p className="text-white">{contentBlocks[4].attributes.content}</p>
             <img
               className="pt-4 md:pt-3 "
               src={contentBlocks[5].attributes.url}

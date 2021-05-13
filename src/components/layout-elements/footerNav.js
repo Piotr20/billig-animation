@@ -23,10 +23,9 @@ const FooterNav = () => {
   `);
 
   const danskMenu = navMenuQuery.allWpMenu.nodes[0].menuItems.nodes;
-  console.log("menu", danskMenu);
   return (
     <div>
-      <h2>Links</h2>
+      <h2 className="text-white">Links</h2>
       <ul className="list-disc list-inside grid grid-cols-2 md:gap-2 md:gap-x-8 xl:gap-x-12 md:pt-4 xl:pt-4">
         {danskMenu.map((menuItem, key) => {
           return (

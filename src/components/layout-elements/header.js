@@ -41,7 +41,7 @@ const Header = () => {
             return (
               <Link
                 key={menuItem.id}
-                className={` py-2${
+                className={` text-black py-2${
                   menuItem.order === 5
                     ? ` bg-black text-white hover:bg-white hover:text-black transition-colors duration-300 rounded-2xl md:rounded-3xl xl:rounded-4xl py-2 px-1 shadow-custom`
                     : ``
