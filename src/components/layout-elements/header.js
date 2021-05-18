@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import { RiMenuFill, RiCloseFill } from "react-icons/Ri";
+import { RiMenuFill } from "@react-icons/all-files/ri/RiMenuFill";
+import { RiCloseFill } from "@react-icons/all-files/ri/RiCloseFill";
 import { graphql, useStaticQuery, Link } from "gatsby";
 import Logo from "../Logo";
 import ShapeGroup from "../shapeGroup";
