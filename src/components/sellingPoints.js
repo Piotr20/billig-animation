@@ -49,10 +49,10 @@ const SellingPoints = () => {
 
   return (
     <section className="container py-8 md:py-24">
-      <div className=" flex flex-col md:flex-row w-full md:justify-between">
+      <div className=" flex flex-col-reverse md:flex-row-reverse w-full md:justify-between">
         {data.allWpPost.nodes.map((box, key) => {
           return (
-            <div className="relative w-full md:w-1/4" key={key}>
+            <div className="relative w-full md:w-1/4 my-8" key={key}>
               <Link to={`/${box.blocks[2].attributes.href}`}>
                 <div className="relative z-20 md:min-h-88 selling-point-box xl:min-h-72 flex  flex-col justify-between bg-white p-4 md:p-6">
                   <h2 className={`${key === 1 ? `md:py-6` : ``}`}>
@@ -62,7 +62,9 @@ const SellingPoints = () => {
                 </div>
               </Link>
               <div
-                className={`absolute z-10 top-1/2 left-0 transform -translate-x-1/2 -translate-y-1/2`}
+                className={`absolute z-10 top-1/2 ${
+                  key === 1 ? ` left-4/5 md:left-0` : ``
+                }  transform -translate-x-1/2 -translate-y-1/2`}
               >
                 <img
                   src={box.blocks[2].attributes.url}

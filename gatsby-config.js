@@ -6,7 +6,7 @@ module.exports = {
     {
       resolve: "gatsby-source-wordpress",
       options: {
-        url: "http://billig-animation.local/graphql",
+        url: "http://wp.piotrpospiech.com/billig-animation/graphql",
         type: {
           BlockEditorContentNode: { exclude: true },
         },
