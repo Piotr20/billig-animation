@@ -4,7 +4,7 @@ import Footer from "../components/layout-elements/footer";
 import Header from "../components/layout-elements/header";
 import ProductionMarketing from "../components/productionMarketing";
 import ProductionSteps from "../components/productionSteps";
-import SEO from "../components/seo";
+import SEO from "../components/Seo";
 import { graphql } from "gatsby";
 import "../styles/styles.scss";
 

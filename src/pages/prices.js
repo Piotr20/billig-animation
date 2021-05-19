@@ -6,7 +6,7 @@ import OfferExplaination from "../components/offerExplanation";
 import Pricing from "../components/priceBoxes";
 import PriceMatch from "../components/priceMatch";
 import InteractiveVideo from "../components/interactiveStyletileVideo";
-import SEO from "../components/seo";
+import SEO from "../components/Seo";
 import { graphql } from "gatsby";
 import "../styles/styles.scss";
 
