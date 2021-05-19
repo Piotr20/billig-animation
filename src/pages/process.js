@@ -5,6 +5,7 @@ import Header from "../components/layout-elements/header";
 import ProductionMarketing from "../components/productionMarketing";
 import ProductionSteps from "../components/productionSteps";
 import SEO from "../components/seo";
+import { graphql } from "gatsby";
 import "../styles/styles.scss";
 
 const ProcessPage = () => {

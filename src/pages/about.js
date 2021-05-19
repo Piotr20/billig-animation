@@ -5,6 +5,7 @@ import Header from "../components/layout-elements/header";
 import OurHistory from "../components/ourHistry";
 import Team from "../components/team";
 import SEO from "../components/seo";
+import { graphql } from "gatsby";
 import "../styles/styles.scss";
 
 const AboutPage = () => {
