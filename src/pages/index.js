@@ -1,5 +1,4 @@
 import React from "react";
-import { graphql } from "gatsby";
 import Header from "../components/layout-elements/header";
 import IntroTextimonials from "../components/introTestimonials";
 import SellingPoints from "../components/sellingPoints";
@@ -7,7 +6,7 @@ import Partners from "../components/partners";
 import TopVideos from "../components/topVideos";
 import Contact from "../components/contact";
 import Footer from "../components/layout-elements/footer";
-import SEO from "../components/Seo";
+import SEO from "../components/seo";
 import "../styles/styles.scss";
 
 const IndexPage = () => {
