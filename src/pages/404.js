@@ -1,5 +1,5 @@
 import React from "react";
-import Seo from "../components/Seo";
+import SEO from "../components/seo";
 import { useStaticQuery, graphql } from "gatsby";
 import { Link } from "gatsby";
 import Img from "gatsby-image";
@@ -27,7 +27,7 @@ const NotFoundPage = () => {
   `);
   return (
     <>
-      <Seo
+      <SEO
         title="404 not found"
         description="404 page not found billig animation"
         keywords="404 not found"

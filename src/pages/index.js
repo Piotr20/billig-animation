@@ -6,13 +6,13 @@ import Partners from "../components/partners";
 import TopVideos from "../components/topVideos";
 import Contact from "../components/contact";
 import Footer from "../components/layout-elements/footer";
-import Seo from "../components/Seo";
+import SEO from "../components/Seo";
 import "../styles/styles.scss";
 
 const IndexPage = () => {
   return (
     <>
-      <Seo
+      <SEO
         title="Forside"
         description="frontpage for billig animation website, company making cheap and quality animations"
         keywords="cheap quality animation Danish"
