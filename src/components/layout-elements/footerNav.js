@@ -29,15 +29,15 @@ const FooterNav = () => {
       <ul className="list-disc list-inside grid grid-cols-2 md:gap-2 md:gap-x-8 xl:gap-x-12 md:pt-4 xl:pt-4">
         {danskMenu.map((menuItem, key) => {
           return (
-            <Link
-              className="hover:underline"
-              key={menuItem.id}
-              to={menuItem.url}
-            >
-              <li className="text-lg md:text-xl xl:text-2xl">
+            <li className="text-lg md:text-xl xl:text-2xl">
+              <Link
+                className="hover:underline"
+                key={menuItem.id}
+                to={menuItem.url}
+              >
                 {menuItem.label}
-              </li>
-            </Link>
+              </Link>
+            </li>
           );
         })}
       </ul>

@@ -60,13 +60,16 @@ const Footer = () => {
               {contentBlocks[0].attributes.content}
             </p>
             <div className="py-4 lg:py-8">
-              <a href={`tel:${contentBlocks[1].attributes.content}`}>
+              <a
+                className="hover:underline"
+                href={`tel:${contentBlocks[1].attributes.content}`}
+              >
                 <p className="text-white">
                   {contentBlocks[1].attributes.content}
                 </p>
               </a>
               <a
-                className=" underline"
+                className="hover:underline"
                 href={`mailTo:${contentBlocks[2].attributes.content}`}
               >
                 <p className="text-white">
@@ -75,14 +78,19 @@ const Footer = () => {
               </a>
             </div>
           </div>
-          <div className="flex flex-col-reverse md:flex-col">
+          <div className="flex flex-col-reverse md:flex-col md:-mt-14 xl:-mt-16">
             <FooterNav />
-            <div className="flex md:pt-4 xl:pt-8">
-              <a href="https://www.facebook.com/billiganimation.dk">
+            <div className="flex md:pt-4 xl:pt-8 ">
+              <a
+                className=""
+                href="https://www.facebook.com/billiganimation.dk"
+              >
                 <FaFacebook className="w-10 h-10 md:w-14 md:h-14 xl:w-16 xl:h-16 mr-6 lg:mr-8 xl:mr-12" />
+                Facebook
               </a>
               <a href="https://www.youtube.com/channel/UCy3csNLhlbNGqaPsy8GKX1w">
                 <FaYoutube className="w-10 h-10 md:w-14 md:h-14 xl:w-16 xl:h-16" />
+                Youtube
               </a>
             </div>
           </div>
@@ -94,6 +102,17 @@ const Footer = () => {
               src={contentBlocks[5].attributes.url}
               alt={contentBlocks[5].attributes.alt}
             />
+          </div>
+        </div>
+        <div className="w-full border-t-2 border-white md:mt-2 xl:mt-6 py-1 md:py-2 flex flex-col md:flex-row md:justify-between">
+          <p className="text-white text-center md:text-left text-md md:text-lg xl:text-xl">
+            Copyrights Billig Animation © 2021
+          </p>
+          <div className="flex justify-between pt-1 md:pt-0 text-md md:text-lg xl:text-xl">
+            <Link className="md:pr-8 xl:pr-10" to="cookies">
+              Cookies & Privatlivspolitik
+            </Link>
+            <Link to="terms">Handelsbetingelser</Link>
           </div>
         </div>
       </div>

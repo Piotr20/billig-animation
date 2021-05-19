@@ -1,8 +1,26 @@
 import React, { useEffect, useRef, useState } from "react";
 import { graphql, useStaticQuery } from "gatsby";
+import { BiCheck } from "@react-icons/all-files/bi/BiCheck";
 import ShapeGroup from "./shapeGroup";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+gsap.registerPlugin(ScrollTrigger);
 
 const InteractiveVideo = () => {
+  useEffect(() => {
+    gsap.from(".gsap-anim-item-styletile", {
+      scrollTrigger: {
+        trigger: ".gsap-container-styletile",
+        markers: false,
+        start: "top 30%",
+        end: "bottom top",
+      },
+      stagger: 0.15,
+      duration: 0.3,
+      y: 30,
+      opacity: 0,
+    });
+  }, []);
   const [cartoonStyle, setCartoonStyle] = useState(false);
   const [cartoonStyleSpeak, setCartoonStyleSpeak] = useState(false);
   const [cartoonStyleSoundEffects, setCartoonStyleSoundEffects] =
@@ -27,6 +45,8 @@ const InteractiveVideo = () => {
     cartoonStyleMusicRef.current.pause();
     cartoonStyleCaptionsRef.current.pause();
     cartoonStyleAllRef.current.pause();
+    flatStyleAllRef.current.pause();
+    whiteboardStyleAllRef.current.pause();
     setCartoonStyle(false);
     setCartoonStyleSpeak(false);
     setCartoonStyleSoundEffects(false);
@@ -36,7 +56,6 @@ const InteractiveVideo = () => {
     setFlatStyleAll(false);
     setWhiteboardStyleAll(false);
   }
-  useEffect(() => {}, []);
   const data = useStaticQuery(graphql`
     query InteractiveVideoQuery {
       allWpPost(
@@ -79,19 +98,19 @@ const InteractiveVideo = () => {
   const videos = data.allWpPost.edges;
 
   return (
-    <section className="container py-8 md:py-24">
-      <h2 className="py-4 md:py-12">
+    <section className="container py-8 md:py-24 gsap-container-styletile">
+      <h2 className="py-4 md:py-12 gsap-anim-item-styletile">
         {videos[0].node.blocks[0].attributes.content}
       </h2>
-      <p className="pt-2 pb-1 md:pt-4 md:pb-2">
+      <p className="pt-2 pb-1 md:pt-4 md:pb-2 gsap-anim-item-styletile">
         {videos[0].node.blocks[1].attributes.content}
       </p>
-      <div className="md:flex md:flex-row-reverse md:justify-between md:items-center mt-4 md:mt-16">
+      <div className="md:flex gsap-anim-item-styletile md:flex-row-reverse md:justify-between md:items-center mt-4 md:mt-16">
         <div className="relative rounded-xl md:rounded-2xl shadow-lg p-4 md:p-6 md:w-7/10">
           <ShapeGroup className="absolute right-0 xl:right-6 z-30 top-0 transform -translate-x-1/2 scale-150 md:scale-200 " />
           <video
+            controls={true}
             className={``}
-            autoPlay={true}
             src={videos[0].node.blocks[3].attributes.src}
           >
             <track
@@ -215,7 +234,7 @@ const InteractiveVideo = () => {
           </video>
         </div>
         <div className="mt-8 md:mt-0 flex flex-col">
-          <label className="cursor-pointer text-lg md:text-xl xl:text-2xl text-black">
+          <label className="cursor-pointer font-semibold text-lg md:text-xl xl:text-2xl text-black flex items-center">
             <input
               checked={cartoonStyle}
               onChange={() => {
@@ -229,12 +248,15 @@ const InteractiveVideo = () => {
                   cartoonStyleRef.current.pause();
                 }
               }}
-              className="mr-4 md:mr-8 "
+              className="mr-4 cursor-pointer relative checkbox"
               type="checkbox"
             />
             Cartoon
+            <div className="absolute custom-checkbox bg-yellow flex items-center justify-center">
+              <BiCheck className="w-full h-full" />
+            </div>
           </label>
-          <label className="cursor-pointer text-lg md:text-xl xl:text-2xl text-black">
+          <label className="cursor-pointer relative text-lg md:text-xl xl:text-2xl text-black flex items-center">
             <input
               checked={flatStyleAll}
               onChange={() => {
@@ -254,12 +276,15 @@ const InteractiveVideo = () => {
                   flatStyleAllRef.current.pause();
                 }
               }}
-              className="mr-4 md:mr-8 "
+              className="mr-4 cursor-pointer checkbox"
               type="checkbox"
             />
-            Flat
+            Flat{" "}
+            <div className="absolute top-0 left-0 custom-checkbox bg-yellow flex items-center justify-center">
+              <BiCheck className="w-full h-full" />
+            </div>
           </label>
-          <label className="cursor-pointer text-lg md:text-xl xl:text-2xl text-black">
+          <label className="cursor-pointer relative text-lg md:text-xl xl:text-2xl text-black flex items-center">
             <input
               checked={whiteboardStyleAll}
               onChange={() => {
@@ -279,12 +304,15 @@ const InteractiveVideo = () => {
                   whiteboardStyleAllRef.current.pause();
                 }
               }}
-              className="mr-4 md:mr-8 "
+              className="mr-4 cursor-pointer relative checkbox"
               type="checkbox"
             />
-            Whiteboard
+            Whiteboard{" "}
+            <div className="absolute top-0 left-0 custom-checkbox bg-yellow flex items-center justify-center">
+              <BiCheck className="w-full h-full" />
+            </div>
           </label>
-          <label className="cursor-pointer text-lg md:text-xl xl:text-2xl text-black">
+          <label className="cursor-pointer relative text-lg md:text-xl xl:text-2xl text-black flex items-center">
             <input
               checked={cartoonStyleSpeak}
               onChange={() => {
@@ -299,12 +327,15 @@ const InteractiveVideo = () => {
                   cartoonStyleSpeakRef.current.pause();
                 }
               }}
-              className="mr-4 md:mr-8 "
+              className="mr-4 cursor-pointer relative checkbox"
               type="checkbox"
             />
-            Speak
+            Speak{" "}
+            <div className="absolute top-0 left-0 custom-checkbox bg-yellow flex items-center justify-center">
+              <BiCheck className="w-full h-full" />
+            </div>
           </label>
-          <label className="cursor-pointer text-lg md:text-xl xl:text-2xl text-black">
+          <label className="cursor-pointer relative text-lg md:text-xl xl:text-2xl text-black flex items-center">
             <input
               checked={cartoonStyleSoundEffects}
               onChange={() => {
@@ -319,12 +350,15 @@ const InteractiveVideo = () => {
                   cartoonStyleSoundEffectsRef.current.pause();
                 }
               }}
-              className="mr-4 md:mr-8 "
+              className="mr-4 cursor-pointer relative checkbox"
               type="checkbox"
             />
-            Sound effects
+            Sound effects{" "}
+            <div className="absolute top-0 left-0 custom-checkbox bg-yellow flex items-center justify-center">
+              <BiCheck className="w-full h-full" />
+            </div>
           </label>
-          <label className="cursor-pointer text-lg md:text-xl xl:text-2xl text-black">
+          <label className="cursor-pointer relative text-lg md:text-xl xl:text-2xl text-black flex items-center">
             <input
               checked={cartoonStyleMusic}
               onChange={() => {
@@ -339,12 +373,15 @@ const InteractiveVideo = () => {
                   cartoonStyleMusicRef.current.pause();
                 }
               }}
-              className="mr-4 md:mr-8 "
+              className="mr-4 cursor-pointer  checkbox"
               type="checkbox"
             />
-            Background music
+            Background music{" "}
+            <div className="absolute top-0 left-0  custom-checkbox bg-yellow flex items-center justify-center">
+              <BiCheck className="w-full h-full" />
+            </div>
           </label>
-          <label className="cursor-pointer text-lg md:text-xl xl:text-2xl text-black">
+          <label className="cursor-pointer relative text-lg md:text-xl xl:text-2xl text-black flex items-center">
             <input
               checked={cartoonStyleCaptions}
               onChange={() => {
@@ -359,12 +396,15 @@ const InteractiveVideo = () => {
                   cartoonStyleCaptionsRef.current.pause();
                 }
               }}
-              className="mr-4 md:mr-8 "
+              className="mr-4 cursor-pointer relative checkbox"
               type="checkbox"
             />
-            Captions
+            Captions{" "}
+            <div className="absolute top-0 left-0 custom-checkbox bg-yellow flex items-center justify-center">
+              <BiCheck className="w-full h-full" />
+            </div>
           </label>
-          <label className="cursor-pointer text-lg md:text-xl xl:text-2xl text-black">
+          <label className="cursor-pointer relative text-lg md:text-xl xl:text-2xl text-black flex items-center">
             <input
               checked={cartoonStyleAll}
               onChange={() => {
@@ -383,10 +423,13 @@ const InteractiveVideo = () => {
                   cartoonStyleAllRef.current.pause();
                 }
               }}
-              className="mr-4 md:mr-8 "
+              className="mr-4 cursor-pointer checkbox"
               type="checkbox"
             />
             All
+            <div className="absolute top-0 left-0 custom-checkbox bg-yellow flex items-center justify-center">
+              <BiCheck className="w-full h-full" />
+            </div>
           </label>
         </div>
       </div>

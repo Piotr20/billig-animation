@@ -1,54 +1,59 @@
-import * as React from "react"
-import { Link } from "gatsby"
-
-// styles
-const pageStyles = {
-  color: "#232129",
-  padding: "96px",
-  fontFamily: "-apple-system, Roboto, sans-serif, serif",
-}
-const headingStyles = {
-  marginTop: 0,
-  marginBottom: 64,
-  maxWidth: 320,
-}
-
-const paragraphStyles = {
-  marginBottom: 48,
-}
-const codeStyles = {
-  color: "#8A6534",
-  padding: 4,
-  backgroundColor: "#FFF4DB",
-  fontSize: "1.25rem",
-  borderRadius: 4,
-}
+import React from "react";
+import Seo from "../components/Seo";
+import { useStaticQuery, graphql } from "gatsby";
+import { Link } from "gatsby";
+import Img from "gatsby-image";
+import Footer from "../components/layout-elements/footer";
+import Header from "../components/layout-elements/header";
 
 // markup
 const NotFoundPage = () => {
+  const data = useStaticQuery(graphql`
+    query Image404Query {
+      allFile(filter: { name: { eq: "404" } }) {
+        edges {
+          node {
+            id
+            childImageSharp {
+              fluid(maxWidth: 2000, quality: 100) {
+                ...GatsbyImageSharpFluid
+                ...GatsbyImageSharpFluidLimitPresentationSize
+              }
+            }
+          }
+        }
+      }
+    }
+  `);
   return (
-    <main style={pageStyles}>
-      <title>Not found</title>
-      <h1 style={headingStyles}>Page not found</h1>
-      <p style={paragraphStyles}>
-        Sorry{" "}
-        <span role="img" aria-label="Pensive emoji">
-          😔
-        </span>{" "}
-        we couldn’t find what you were looking for.
-        <br />
-        {process.env.NODE_ENV === "development" ? (
-          <>
-            <br />
-            Try creating a page in <code style={codeStyles}>src/pages/</code>.
-            <br />
-          </>
-        ) : null}
-        <br />
-        <Link to="/">Go home</Link>.
-      </p>
-    </main>
-  )
-}
+    <>
+      <Seo
+        title="404 not found"
+        description="404 page not found billig animation"
+        keywords="404 not found"
+      />
+      <main>
+        <Header />
+        <div className="flex flex-col container mt-20">
+          <div className="w-full md:w-1/2 self-center">
+            <Img
+              style={{ height: "100%", width: "100%" }}
+              imgStyle={{ objectPosition: "center center" }}
+              fluid={data.allFile.edges[0].node.childImageSharp.fluid}
+            />
+          </div>
+          <h2 className="text-center">Siden kunne desværre ikke findes</h2>
+          <Link
+            className="mx-auto py-2 md:py-4 text-xl md:text-3xl xl:text-5xl font-semibold text-black"
+            to="/"
+          >
+            Til Forside
+          </Link>
+        </div>
+        <Footer />
+      </main>
+    </>
+  );
+};
 
-export default NotFoundPage
+export default NotFoundPage;

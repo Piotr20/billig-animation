@@ -1,8 +1,25 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { graphql, useStaticQuery } from "gatsby";
 import { Link } from "gatsby";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+gsap.registerPlugin(ScrollTrigger);
 
 const SellingPoints = () => {
+  useEffect(() => {
+    gsap.from(".gsap-anim-item-selling-points", {
+      scrollTrigger: {
+        trigger: ".gsap-conainer-selling-points",
+        markers: false,
+        start: "top 30%",
+        end: "bottom top",
+      },
+      stagger: 0.15,
+      duration: 0.3,
+      y: 30,
+      opacity: 0,
+    });
+  }, []);
   const data = useStaticQuery(graphql`
     query SellingPointsQuery {
       allWpPost(
@@ -48,11 +65,14 @@ const SellingPoints = () => {
   `);
 
   return (
-    <section className="container py-8 md:py-24">
-      <div className=" flex flex-col-reverse md:flex-row-reverse w-full md:justify-between">
+    <section className="container py-8 md:py-24 gsap-conainer-selling-points">
+      <div className=" flex flex-col md:flex-row w-full md:justify-between">
         {data.allWpPost.nodes.map((box, key) => {
           return (
-            <div className="relative w-full md:w-1/4 my-8" key={key}>
+            <div
+              className="relative w-full md:w-1/4 my-8 gsap-anim-item-selling-points"
+              key={key}
+            >
               <Link to={`/${box.blocks[2].attributes.href}`}>
                 <div className="relative z-20 md:min-h-88 selling-point-box xl:min-h-72 flex  flex-col justify-between bg-white p-4 md:p-6">
                   <h2 className={`${key === 1 ? `md:py-6` : ``}`}>

@@ -51,11 +51,15 @@ const WhatsNotIncluded = () => {
   return (
     <div className="w-full md:w-2/5 md:flex md:flex-col md:justify-between">
       <div>
-        <h2>{content[0].attributes.content}</h2>
-        <p className="py-2">{content[1].attributes.content}</p>
+        <h2 className="gsap-anim-item-not-included">
+          {content[0].attributes.content}
+        </h2>
+        <p className="py-2 gsap-anim-item-not-included">
+          {content[1].attributes.content}
+        </p>
       </div>
       <ul
-        className="what-not-included-list py-2 md:pt-6 xl:pt-10 text-lg md:text-xl xl:text-2xl"
+        className="what-not-included-list gsap-anim-item-not-included py-2 md:pt-6 xl:pt-10 text-lg md:text-xl xl:text-2xl"
         dangerouslySetInnerHTML={{ __html: content[2].attributes.values }}
       />
     </div>

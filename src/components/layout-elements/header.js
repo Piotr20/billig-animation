@@ -39,19 +39,22 @@ const Header = () => {
         <ul className="hidden md:flex font-semibold">
           {danskMenu.map((menuItem, key) => {
             return (
-              <Link
-                key={menuItem.id}
-                className={` text-black py-2${
-                  menuItem.order === 5
-                    ? ` bg-black text-white hover:bg-white hover:text-black transition-colors duration-300 rounded-2xl md:rounded-3xl xl:rounded-4xl py-2 px-1 shadow-custom`
-                    : ``
-                }`}
-                to={menuItem.url}
-              >
-                <li className="md:text-lg 2xl:text-xl md:px-6 2xl:px-8 md:mx-1 xl:mx-2">
+              <li className="md:text-lg 2xl:text-xl md:mx-6 xl:mx-8">
+                <Link
+                  activeClassName={`${
+                    menuItem.order === 5 ? `` : `underline-active`
+                  }`}
+                  key={menuItem.id}
+                  className={` text-black py-2  ${
+                    menuItem.order === 5
+                      ? ` bg-black text-white hover:bg-white hover:text-black transition-colors duration-300 rounded-2xl md:rounded-3xl xl:rounded-4xl py-2 px-6 xl:px-8 shadow-custom`
+                      : `underline-hover`
+                  }`}
+                  to={menuItem.url}
+                >
                   {menuItem.label}
-                </li>
-              </Link>
+                </Link>
+              </li>
             );
           })}
         </ul>

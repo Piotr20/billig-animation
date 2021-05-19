@@ -1,7 +1,24 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { graphql, useStaticQuery } from "gatsby";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+gsap.registerPlugin(ScrollTrigger);
 
 const CasesShowcase = () => {
+  useEffect(() => {
+    gsap.from(".gsap-anim-item-cases", {
+      scrollTrigger: {
+        trigger: ".gsap-container-cases",
+        markers: false,
+        start: "top 30%",
+        end: "bottom 50%",
+      },
+      stagger: 0.15,
+      duration: 0.3,
+      y: 30,
+      opacity: 0,
+    });
+  }, []);
   const [searchTerm, setSeacrchTerm] = useState("");
   const data = useStaticQuery(graphql`
     query ShowcaseQuery {
@@ -36,7 +53,7 @@ const CasesShowcase = () => {
   const cases = data.allWpPost.edges;
 
   return (
-    <section className=" mt-24 md:mt-32 py-8 md:py-24 ">
+    <section className=" mt-24 md:mt-32 py-8 md:py-24 gsap-container-cases">
       <div className="w-full h-20 px-8 lg:px-10 2xl:px-24 flex items-center justify-center md:justify-start shadow-md bg-white">
         <input
           className="text-lg md:text-xl xl:text-2xl text-black w-11/12 md:w-1/3 xl:w-1/4 border-black border-2 xl:border-4  pl-4 md:pl-6 py-1 md:py-2 rounded-2xl md:rounded-3xl outline-none transition-all duration-150 focus:border-gray-300"
@@ -64,7 +81,7 @@ const CasesShowcase = () => {
             .map((videoBox) => {
               return (
                 <div
-                  className="bg-white rounded-xl md:rounded-2xl mb-8 md:mb-0 shadow-lg p-4 md:p-6 "
+                  className="bg-white rounded-xl md:rounded-2xl mb-8 md:mb-0 shadow-lg p-4 md:p-6  gsap-anim-item-cases"
                   key={videoBox.node.id}
                 >
                   {console.log(videoBox)}

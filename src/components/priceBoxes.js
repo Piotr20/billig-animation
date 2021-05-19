@@ -1,7 +1,24 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Link, graphql, useStaticQuery } from "gatsby";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+gsap.registerPlugin(ScrollTrigger);
 
 const Pricing = () => {
+  useEffect(() => {
+    gsap.from(".gsap-anim-item-price-box", {
+      scrollTrigger: {
+        trigger: ".gsap-conainer-price-box",
+        markers: false,
+        start: "top bottom",
+        end: "bottom 50%",
+      },
+      stagger: 0.15,
+      duration: 0.3,
+      y: 30,
+      opacity: 0,
+    });
+  }, []);
   const data = useStaticQuery(graphql`
     query PricingQuery {
       allWpPost(
@@ -48,12 +65,12 @@ const Pricing = () => {
   const boxes = data.allWpPost.edges;
 
   return (
-    <section className="container mt-24 md:mt-32 py-8  md:py-24 flex flex-col items-center">
-      <div className="flex flex-col-reverse md:flex-row-reverse w-full md:justify-between">
+    <section className="container gsap-container-price-box mt-24 md:mt-32 py-8  md:py-24 flex flex-col items-center">
+      <div className="flex flex-col md:flex-row w-full md:justify-between">
         {boxes.map((box) => {
           return (
             <div
-              className="relative md:w-3/10 rounded-xl min-h-80 md:rounded-2xl my-8 md:my-12 shadow-lg p-4 md:p-6 flex flex-col justify-center"
+              className="relative gsap-anim-item-price-box md:w-3/10 rounded-xl min-h-80 md:rounded-2xl my-8 md:my-12 shadow-lg p-4 md:p-6 flex flex-col justify-end"
               key={box.node.id}
             >
               <div className="flex flex-col items-center ">
@@ -83,9 +100,11 @@ const Pricing = () => {
         })}
       </div>
       <div className="flex flex-col">
-        <h2 className="text-center">Er du interesseret?</h2>
+        <h2 className="text-center gsap-anim-item-price-box">
+          Er du interesseret?
+        </h2>
         <Link
-          className="bg-black mt-4 text-lg md:text-xl xl:text-2xl self-center  text-white hover:bg-white hover:text-black transition-colors duration-300 rounded-2xl md:rounded-3xl xl:rounded-4xl py-1 px-5 md:py-2 md:px-7 shadow-custom"
+          className="bg-black gsap-anim-item-price-box mt-4 text-lg md:text-xl xl:text-2xl self-center  text-white hover:bg-white hover:text-black transition-colors duration-300 rounded-2xl md:rounded-3xl xl:rounded-4xl py-1 px-5 md:py-2 md:px-7 shadow-custom"
           to="/contact"
         >
           Kontakt os

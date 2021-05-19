@@ -23,7 +23,7 @@ const OurHistoryImage = () => {
   `);
 
   return (
-    <div className="w-full h-72 md:h-96 xl:h-112 mt-8 md:mt-24">
+    <div className="w-full h-72 md:h-96 xl:h-112 mt-8 md:mt-24 gsap-anim-item-our-history flex justify-center">
       <Img
         style={{ height: "100%", width: "100%" }}
         imgStyle={{ objectPosition: "center center" }}

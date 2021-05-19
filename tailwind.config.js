@@ -250,6 +250,8 @@ module.exports = {
     },
     fontFamily: {
       sans: [
+        "Quicksand",
+
         "ui-sans-serif",
         "system-ui",
         "-apple-system",
@@ -283,6 +285,7 @@ module.exports = {
         '"Courier New"',
         "monospace",
       ],
+      body: ["Heebo"],
     },
     fontSize: {
       xs: ["0.75rem", { lineHeight: "1rem" }],
@@ -937,6 +940,7 @@ module.exports = {
       "focus-within",
       "hover",
       "focus",
+      "checked",
     ],
     backgroundImage: ["responsive"],
     backgroundOpacity: [
