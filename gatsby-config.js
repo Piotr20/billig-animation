@@ -3,7 +3,7 @@ module.exports = {
     title: "Billig animation",
     description:
       "Company producing cheap and quality animations for all sorts of clients in Denmark and Europe",
-    url: "http://billig-animation.piotrpospiech.com/",
+    url: "https://billig-animation.piotrpospiech.com/",
     author: "Piotr Pospiech",
   },
   plugins: [
