@@ -68,7 +68,11 @@ const Partners = () => {
               className="w-1/2 md:w-2/3 gsap-anim-item-partners"
               key={partner.attributes.id}
             >
-              <img src={partner.attributes.url} alt={partner.attributes.alt} />
+              <img
+                className="w-full"
+                src={partner.attributes.url}
+                alt={partner.attributes.alt}
+              />
             </div>
           );
         })}
