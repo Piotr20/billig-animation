@@ -28,7 +28,7 @@ const Header = () => {
   `);
 
   const danskMenu = data.allWpMenu.nodes[0].menuItems.nodes;
-
+  //Header code fetched from the menu
   return (
     <header className="w-full h-20 px-8 lg:px-10 2xl:px-24 flex items-center justify-between shadow-md fixed top-0 left-0 z-50 bg-white">
       <nav className=" flex items-center justify-between w-full h-full">

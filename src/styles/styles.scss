@@ -8,6 +8,7 @@
   box-sizing: border-box;
 }
 @layer base {
+  //defining default styles for elements below
   .container {
     @apply mx-auto;
   }
@@ -56,6 +57,7 @@
     }
   }
 }
+//more general styles styled with pure Sass
 .curtain-item-mobile {
   position: relative;
   &::after {

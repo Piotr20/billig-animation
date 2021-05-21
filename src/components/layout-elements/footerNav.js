@@ -21,7 +21,7 @@ const FooterNav = () => {
       }
     }
   `);
-
+  //Footer links
   const danskMenu = navMenuQuery.allWpMenu.nodes[0].menuItems.nodes;
   return (
     <div>

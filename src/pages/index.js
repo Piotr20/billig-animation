@@ -10,6 +10,7 @@ import SEO from "../components/Seo";
 import "../styles/styles.scss";
 
 const IndexPage = () => {
+  // Index page and it's imported components as well as metadata
   return (
     <>
       <SEO

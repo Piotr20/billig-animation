@@ -3,6 +3,7 @@ import { graphql, useStaticQuery } from "gatsby";
 import Img from "gatsby-image";
 
 const OurHistoryImage = () => {
+  //Gatsby Image query
   const data = useStaticQuery(graphql`
     query OurHistoryImage {
       allFile(filter: { name: { eq: "billig-animation-team-picture" } }) {
@@ -21,7 +22,7 @@ const OurHistoryImage = () => {
       }
     }
   `);
-
+  //Gatsby Image used
   return (
     <div className="w-full h-72 md:h-96 xl:h-112 mt-8 md:mt-24 gsap-anim-item-our-history flex justify-center">
       <Img

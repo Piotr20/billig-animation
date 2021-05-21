@@ -60,6 +60,7 @@ const CasesShowcase = () => {
           type="text"
           placeholder="Search..."
           onChange={(event) => {
+            //triggering the filter functions and assigning value to state
             setSeacrchTerm(event.target.value);
           }}
         />
@@ -68,6 +69,7 @@ const CasesShowcase = () => {
         <div className="container w-full md:grid md:grid-cols-3 md:gap-12 xl:gap-20">
           {cases
             .filter((val) => {
+              //filtering the data and conditionaly passing it to a map
               if (searchTerm === "") {
                 return val;
               } else if (
@@ -79,6 +81,7 @@ const CasesShowcase = () => {
               }
             })
             .map((videoBox) => {
+              //mapping thriugh filtered data
               return (
                 <div
                   className="bg-white rounded-xl md:rounded-2xl mb-8 md:mb-0 shadow-lg p-4 md:p-6  gsap-anim-item-cases"

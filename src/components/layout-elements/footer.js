@@ -6,6 +6,7 @@ import Logo from "../Logo";
 import { FaFacebook, FaYoutube } from "react-icons/fa";
 
 const Footer = () => {
+  //Footer content query
   const footerContentQuery = useStaticQuery(graphql`
     query FooterContentQuery {
       allWpPost(
@@ -43,7 +44,7 @@ const Footer = () => {
   `);
 
   const contentBlocks = footerContentQuery.allWpPost.edges[0].node.blocks;
-
+  //Footer component code
   return (
     <footer className="bg-black mt-4 md:mt-12 w-full">
       <div className="container relative text-white md:py-6 w-full">

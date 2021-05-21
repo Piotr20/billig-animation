@@ -5,6 +5,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 
 const AboutIntro = () => {
+  //Gsap implemnted iside useEffect same everwhere
   useEffect(() => {
     gsap.from(".gsap-anim-item-about-intro", {
       scrollTrigger: {
@@ -61,7 +62,6 @@ const AboutIntro = () => {
       }
     }
   `);
-
   const contactIntroContent = data.allWpPost.edges[0].node.blocks;
   return (
     <section className="container gsap-container-about-intro mt-24 md:mt-32 py-8 md:py-24 md:flex md:justify-between md:items-center">

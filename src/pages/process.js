@@ -5,10 +5,10 @@ import Header from "../components/layout-elements/header";
 import ProductionMarketing from "../components/productionMarketing";
 import ProductionSteps from "../components/productionSteps";
 import SEO from "../components/Seo";
-
 import "../styles/styles.scss";
 
 const ProcessPage = () => {
+  // Process page and it's imported components as well as metadata
   return (
     <>
       <SEO

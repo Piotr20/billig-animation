@@ -8,6 +8,7 @@ import Header from "../components/layout-elements/header";
 
 // markup
 const NotFoundPage = () => {
+  // 404 page and it's imported components as well as metadata and static query
   const data = useStaticQuery(graphql`
     query Image404Query {
       allFile(filter: { name: { eq: "404" } }) {

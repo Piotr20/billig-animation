@@ -1,4 +1,5 @@
 module.exports = {
+  // seo head meta tags information used as a fallback data
   siteMetadata: {
     title: "Billig animation",
     description:
@@ -10,12 +11,13 @@ module.exports = {
     {
       resolve: "gatsby-source-wordpress",
       options: {
-        url: "https://wp.piotrpospiech.com/billig-animation/graphql",
+        url: "https://wp.piotrpospiech.com/billig-animation/graphql", //WPGatsby endpoint link to the WordPress that the data is being fetched from
         type: {
           BlockEditorContentNode: { exclude: true },
         },
       },
     },
+
     "gatsby-plugin-sass",
     "gatsby-plugin-image",
     "gatsby-plugin-sharp",
@@ -23,6 +25,7 @@ module.exports = {
     "gatsby-plugin-postcss",
     "gatsby-plugin-react-helmet",
     {
+      // Fetching fonts from the google fonts
       resolve: `gatsby-plugin-google-fonts`,
       options: {
         fonts: [`Quicksand\:400,600,700`, `Heebo:\:400,600,700`],
