@@ -19,7 +19,7 @@ module.exports = {
       black: "#171717",
       yellow: "#FAF877",
       white: colors.white,
-      "light-gray": "#E5E5E5",
+      "light-gray": "#F5F5F5",
       gray: colors.coolGray,
     },
     spacing: {
