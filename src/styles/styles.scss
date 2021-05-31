@@ -141,3 +141,16 @@
 .checkbox:checked ~ .custom-checkbox {
   display: flex;
 }
+.carousel .control-arrow:before,
+.carousel.carousel-slider .control-arrow:before {
+  border-top: 12px solid transparent !important;
+  border-bottom: 12px solid transparent !important;
+}
+.carousel .control-prev.control-arrow:before {
+  border-right: 12px solid transparent !important;
+  border-right-color: #171717 !important;
+}
+.carousel .control-next.control-arrow:before {
+  border-left: 12px solid transparent !important;
+  border-left-color: #171717 !important;
+}

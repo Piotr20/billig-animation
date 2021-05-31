@@ -10,7 +10,7 @@ const CasesShowcase = () => {
       scrollTrigger: {
         trigger: ".gsap-container-cases",
         markers: false,
-        start: "top 30%",
+        start: "top 60%",
         end: "bottom 50%",
       },
       stagger: 0.15,
@@ -66,7 +66,7 @@ const CasesShowcase = () => {
         />
       </div>
       <div className=" w-full bg-light-gray py-8 md:py-24">
-        <div className="container w-full md:grid md:grid-cols-3 md:gap-12 xl:gap-20">
+        <div className="container w-full md:grid md:grid-cols-3 md:gap-12 xl:gap-16">
           {cases
             .filter((val) => {
               //filtering the data and conditionaly passing it to a map
@@ -84,7 +84,7 @@ const CasesShowcase = () => {
               //mapping thriugh filtered data
               return (
                 <div
-                  className="bg-white rounded-xl md:rounded-2xl mb-8 md:mb-0 shadow-lg p-4 md:p-6  gsap-anim-item-cases"
+                  className="bg-white rounded-xl md:rounded-2xl mb-8 md:mb-0 shadow-lg p-4 md:p-6 md:pb-0  gsap-anim-item-cases"
                   key={videoBox.node.id}
                 >
                   {console.log(videoBox)}

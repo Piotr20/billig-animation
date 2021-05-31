@@ -11,7 +11,7 @@ const OurHistory = () => {
       scrollTrigger: {
         trigger: ".gsap-container-our-history",
         markers: false,
-        start: "top 30%",
+        start: "top 60%",
         end: "bottom 50%",
       },
       stagger: 0.15,

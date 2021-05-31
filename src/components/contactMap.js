@@ -10,7 +10,7 @@ const ContactMap = () => {
       scrollTrigger: {
         trigger: ".gsap-container-contact-map",
         markers: false,
-        start: "top 30%",
+        start: "top 60%",
         end: "bottom 50%",
       },
       stagger: 0.05,

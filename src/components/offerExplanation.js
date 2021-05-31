@@ -11,7 +11,7 @@ const OfferExplaination = () => {
       scrollTrigger: {
         trigger: ".gsap-container-offer-eplaination",
         markers: false,
-        start: "top 30%",
+        start: "top 60%",
         end: "bottom 50%",
       },
       stagger: 0.15,
@@ -23,7 +23,7 @@ const OfferExplaination = () => {
       scrollTrigger: {
         trigger: ".gsap-container-offer-eplaination",
         markers: false,
-        start: "top 30%",
+        start: "top 60%",
         end: "bottom 50%",
       },
       stagger: 0.15,

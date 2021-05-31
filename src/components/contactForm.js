@@ -11,7 +11,7 @@ const ContactForm = () => {
       scrollTrigger: {
         trigger: ".gsap-container-contact-form",
         markers: false,
-        start: "top 30%",
+        start: "top 20%",
         end: "bottom 50%",
       },
       stagger: 0.05,

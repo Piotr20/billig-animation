@@ -10,7 +10,7 @@ const PriceMatch = () => {
       scrollTrigger: {
         trigger: ".gsap-container-price-match",
         markers: false,
-        start: "top 30%",
+        start: "top 60%",
         end: "bottom top",
       },
       stagger: 0.15,

@@ -8,11 +8,16 @@ gsap.registerPlugin(ScrollTrigger);
 
 const TopVideos = () => {
   useEffect(() => {
+    const arrowLeft = document.querySelector(
+      ".carousel .control-prev.control-arrow"
+    );
+    console.log(arrowLeft);
+    arrowLeft.style.borderColor = "red";
     gsap.from(".gsap-anim-item-top-videos", {
       scrollTrigger: {
         trigger: ".gsap-container-top-videos",
         markers: false,
-        start: "top 30%",
+        start: "top 60%",
         end: "bottom top",
       },
       stagger: 0.15,

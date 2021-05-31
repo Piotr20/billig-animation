@@ -10,7 +10,7 @@ const Team = () => {
       scrollTrigger: {
         trigger: ".gsap-container-team",
         markers: false,
-        start: "top 30%",
+        start: "top 45%",
         end: "bottom 50%",
       },
       stagger: 0.15,

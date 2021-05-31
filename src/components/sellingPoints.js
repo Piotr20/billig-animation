@@ -26,7 +26,7 @@ const SellingPoints = () => {
       scrollTrigger: {
         trigger: ".gsap-conainer-selling-points",
         markers: false,
-        start: "top 30%",
+        start: "top 45%",
         end: "bottom top",
       },
       stagger: 0.15,
