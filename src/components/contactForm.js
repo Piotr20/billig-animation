@@ -75,12 +75,12 @@ const ContactForm = () => {
           <input
             className="w-full font-semibold gsap-anim-item-contact-form md:w-1/2 p-2 md:p-4 md:pl-6 pl-4 my-2 md:my-3 text-black  text-lg md:text-xl xl:text-2xl bg-light-gray rounded-2xl md:rounded-3xl"
             {...register("firstName")}
-            placeholder="Full Name or company name"
+            placeholder="Fulde navn / Firma"
           />
           <input
             className="w-full font-semibold gsap-anim-item-contact-form md:w-2/5 p-2 md:p-4 md:pl-6 pl-4 my-2 md:my-3 text-black  text-lg md:text-xl xl:text-2xl bg-light-gray rounded-2xl md:rounded-3xl"
             {...register("lastName")}
-            placeholder="Phone number"
+            placeholder="Telefon"
           />
           <input
             className="w-full font-semibold gsap-anim-item-contact-form p-2 md:p-4 md:pl-6 pl-4 my-2 md:my-3 text-black  text-lg md:text-xl xl:text-2xl bg-light-gray rounded-2xl md:rounded-3xl"
@@ -90,14 +90,14 @@ const ContactForm = () => {
           <textarea
             className="w-full font-semibold gsap-anim-item-contact-form p-2 md:p-4 md:pl-6 pl-4 my-2 md:my-3 h-40 md:h-60 xl:h-54 flex text-black  text-lg md:text-xl xl:text-2xl bg-light-gray rounded-2xl md:rounded-3xl"
             {...register("message")}
-            placeholder="Message"
+            placeholder="Besked"
           />
 
           <button
             className="bg-black font-semibold gsap-anim-item-contact-form mt-4 text-lg md:text-xl xl:text-2xl self-center text-white hover:bg-white hover:text-black transition-colors duration-300 rounded-2xl md:rounded-3xl xl:rounded-4xl py-1 px-5 md:py-2 md:px-7 shadow-custom"
             type="submit"
           >
-            Submit
+            Send Besked
           </button>
         </form>
       </div>
