@@ -18,6 +18,8 @@ module.exports = {
 
       black: "#171717",
       yellow: "#FAF877",
+      red: "#F06373",
+      blue: "#6B99E2",
       white: colors.white,
       "light-gray": "#F5F5F5",
       gray: colors.coolGray,
@@ -154,7 +156,11 @@ module.exports = {
       DEFAULT: "1px",
       0: "0px",
       2: "2px",
+      3: "3px",
       4: "4px",
+      5: "5px",
+      6: "6px",
+      7: "7px",
       8: "8px",
     },
     boxShadow: {
