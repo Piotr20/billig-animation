@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { graphql, useStaticQuery } from "gatsby";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -20,6 +20,8 @@ const CasesShowcase = () => {
     });
   }, []);
   const [searchTerm, setSeacrchTerm] = useState("");
+  const [sliderValue, setSliderValue] = useState(30);
+  const sliderRef = useRef(null);
   const data = useStaticQuery(graphql`
     query ShowcaseQuery {
       allWpPost(
@@ -53,17 +55,47 @@ const CasesShowcase = () => {
   const cases = data.allWpPost.edges;
 
   return (
-    <section className=" mt-24 md:mt-32 py-8 md:py-24 gsap-container-cases">
-      <div className="w-full h-20 px-8 lg:px-10 2xl:px-24 flex items-center justify-center md:justify-start shadow-md bg-white">
-        <input
-          className="text-lg md:text-xl xl:text-2xl text-black w-11/12 md:w-1/3 xl:w-1/4 border-black border-2 xl:border-4  pl-4 md:pl-6 py-1 md:py-2 rounded-2xl md:rounded-3xl outline-none transition-all duration-150 focus:border-gray-300"
-          type="text"
-          placeholder="Search..."
-          onChange={(event) => {
-            //triggering the filter functions and assigning value to state
-            setSeacrchTerm(event.target.value);
-          }}
-        />
+    <section className=" mt-24 md:mt-16 py-8 md:py-24 gsap-container-cases">
+      <h2 className="text-center mb-8 md:mb-16">Alle cases</h2>
+      <div className="w-full h-20 px-8 lg:px-10 2xl:px-24 flex items-center justify-center md:justify-between shadow-md bg-white">
+        <div className="container h-20 flex items-center justify-center md:justify-between ">
+          <input
+            className="text-lg md:text-xl xl:text-2xl text-black w-11/12 md:w-1/3 xl:w-3/10 border-black border-2 xl:border-4  pl-4 md:pl-6 py-1 md:py-2 rounded-2xl md:rounded-3xl outline-none transition-all duration-150 focus:border-gray-300"
+            type="text"
+            placeholder="Search..."
+            onChange={(event) => {
+              //triggering the filter functions and assigning value to state
+              setSeacrchTerm(event.target.value);
+            }}
+          />
+          <div className="hidden md:flex items-center">
+            <div className="mx-8 border-2 border-black py-1 px-5 rounded-xl flex items-center">
+              <span className="text-lg mr-4 md:text-xl xl:text-2xl font-bold flex justify-center min-w-4-letters">
+                {sliderValue}
+              </span>
+              <input
+                ref={sliderRef}
+                className="slider"
+                type="range"
+                min={15}
+                step={15}
+                max={180}
+                defaultValue="30"
+                onChange={(event) => setSliderValue(event.target.value)}
+              />
+            </div>
+            <select
+              className="text-lg mx-8 md:text-xl xl:text-2xl font-bold outline-none border-2 border-black py-1 px-3 hidden md:block  rounded-xl"
+              id="stilarter"
+            >
+              <option defaultValue="">Stilarter</option>
+              <option value="cartoon">Cartoon</option>
+              <option value="flat">Flat</option>
+              <option value="whiteboard">Whiteboard</option>
+              Audi
+            </select>
+          </div>
+        </div>
       </div>
       <div className=" w-full bg-light-gray py-8 md:py-24">
         <div className="container w-full md:grid md:grid-cols-3 md:gap-12 xl:gap-16">

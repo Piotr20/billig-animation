@@ -580,6 +580,7 @@ module.exports = {
       full: "100%",
       min: "min-content",
       max: "max-content",
+      "4-letters": "4ch",
       "short-text": "30ch",
       prose: "65ch",
       ...breakpoints(theme("screens")),
@@ -631,6 +632,7 @@ module.exports = {
       full: "100%",
       min: "min-content",
       max: "max-content",
+      "4-letters": "4ch",
     },
     objectPosition: {
       bottom: "bottom",
