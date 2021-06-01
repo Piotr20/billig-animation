@@ -70,7 +70,7 @@ const Pricing = () => {
         {boxes.map((box) => {
           return (
             <div
-              className="relative gsap-anim-item-price-box md:w-3/10 rounded-xl min-h-80 md:rounded-2xl my-8 md:my-12 shadow-lg p-4 md:p-6 flex flex-col justify-end"
+              className="relative gsap-anim-item-price-box md:w-3/10 rounded-xl min-h-80 md:rounded-2xl my-8 md:my-12 shadow-lg p-4 md:p-6 flex flex-col justify-start"
               key={box.node.id}
             >
               <div className="flex flex-col items-center ">

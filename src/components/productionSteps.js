@@ -94,9 +94,9 @@ const ProductionSteps = () => {
                   key === 1 || key === 3
                     ? `self-end mr-2  md:mr-0 md:self-end`
                     : `self-end mr-2 md:mr-0 md:self-start`
-                } ${key === 0 || key == 3 ? ` bg-yellow` : ``}  ${
-                  key === 1 || key == 4 ? ` bg-blue` : ``
-                } ${key === 2 || key == 5 ? ` bg-red` : ``} `}
+                } ${key === 0 || key === 3 ? ` bg-yellow` : ``}  ${
+                  key === 1 || key === 4 ? ` bg-blue` : ``
+                } ${key === 2 || key === 5 ? ` bg-red` : ``} `}
                 key={key}
               >
                 <h2 className={`py-2 md:py-3  `}>

@@ -16,7 +16,7 @@ const IndexPage = () => {
       <SEO
         title="Forside"
         description="frontpage for billig animation website, company making cheap and quality animations"
-        keywords="cheap quality animation Danish"
+        keywords={["cheap", "quality", "animation", "Danish"]}
       />
       <main>
         <Header />

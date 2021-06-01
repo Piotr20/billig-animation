@@ -39,7 +39,7 @@ const Header = () => {
         <ul className="hidden md:flex font-semibold">
           {danskMenu.map((menuItem, key) => {
             return (
-              <li className="md:text-lg 2xl:text-xl md:mx-6 xl:mx-8">
+              <li key={key} className="md:text-lg 2xl:text-xl md:mx-6 xl:mx-8">
                 <Link
                   activeClassName={`${
                     menuItem.order === 5 ? `` : `underline-active`

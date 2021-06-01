@@ -11,7 +11,7 @@ const TopVideos = () => {
     const arrowLeft = document.querySelector(
       ".carousel .control-prev.control-arrow"
     );
-    console.log(arrowLeft);
+
     arrowLeft.style.borderColor = "red";
     gsap.from(".gsap-anim-item-top-videos", {
       scrollTrigger: {
@@ -64,6 +64,7 @@ const TopVideos = () => {
   `);
 
   const videos = data.allWpPost.edges;
+  console.log("videos", videos);
   return (
     <section className=" bg-light-gray my-8 md:my-24 py-4 md:py-12 ">
       <div className="container flex flex-col items-start gsap-container-top-videos">
@@ -75,7 +76,7 @@ const TopVideos = () => {
         </p>
         <div className="w-full overflow-hidden py-8 md:py-12">
           <Carousel
-            className=" gsap-anim-item-top-videos"
+            className="gsap-anim-item-top-videos"
             emulateTouch={false}
             stopOnHover={false}
             autoPlay={false}
