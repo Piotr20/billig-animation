@@ -51,7 +51,7 @@ const NotFoundPage = () => {
             Til Forside
           </Link>
         </div>
-        <Footer />
+        <Footer footerClass="mt-4 md:mt-12 xl:mt-20" />
       </main>
     </>
   );

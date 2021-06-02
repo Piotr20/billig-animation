@@ -25,7 +25,7 @@ const IndexPage = () => {
         <SellingPoints />
         <TopVideos />
         <Contact />
-        <Footer />
+        <Footer footerClass="mt-4 md:mt-12 xl:mt-20" />
       </main>
     </>
   );

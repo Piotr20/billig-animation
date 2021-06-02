@@ -55,7 +55,7 @@ const CasesShowcase = () => {
   const cases = data.allWpPost.edges;
 
   return (
-    <section className=" mt-24 md:mt-16 py-8 md:py-24 gsap-container-cases">
+    <section className=" mt-24 md:mt-16 pt-8 md:pt-24 gsap-container-cases">
       <h2 className="text-center mb-8 md:mb-16">Alle cases</h2>
       <div className="w-full h-20 px-8 lg:px-10 2xl:px-24 flex items-center justify-center md:justify-between shadow-md bg-white">
         <div className="container h-20 flex items-center justify-center md:justify-between ">

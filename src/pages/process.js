@@ -21,7 +21,7 @@ const ProcessPage = () => {
         <ProductionSteps />
         <InteractiveVideo />
         <ProductionMarketing />
-        <Footer />
+        <Footer footerClass="mt-4 md:mt-12 xl:mt-20" />
       </main>
     </>
   );

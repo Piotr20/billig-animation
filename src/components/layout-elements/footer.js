@@ -5,7 +5,7 @@ import ShapeGroup from "../shapeGroup";
 import Logo from "../Logo";
 import { FaFacebook, FaYoutube } from "react-icons/fa";
 
-const Footer = () => {
+const Footer = ({ footerClass }) => {
   //Footer content query
   const footerContentQuery = useStaticQuery(graphql`
     query FooterContentQuery {
@@ -46,7 +46,7 @@ const Footer = () => {
   const contentBlocks = footerContentQuery.allWpPost.edges[0].node.blocks;
   //Footer component code
   return (
-    <footer className="bg-black mt-4 md:mt-12 w-full">
+    <footer className={`bg-black ${footerClass} w-full`}>
       <div className="container relative text-white md:py-6 w-full">
         <Link
           className={`w-40 py-6 md:py-8 md:w-40 xl:w-56 inline-block`}

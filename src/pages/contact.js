@@ -21,7 +21,7 @@ const ContactPage = () => {
         <ContactIntro />
         <ContactMap />
         <ContactForm />
-        <Footer />
+        <Footer footerClass="mt-4 md:mt-12 xl:mt-20" />
       </main>
     </>
   );

@@ -88,7 +88,7 @@ const TopVideos = () => {
             {videos.map((video, key) => {
               return (
                 <div key={video.node.id} className="flex justify-center">
-                  <div className="w-11/12 md:w-2/3 bg-white rounded-xl md:rounded-2xl shadow-xl md:shadow-2xl overflow-hidden p-4 md:p-6">
+                  <div className="w-10/12 md:w-2/3 bg-white rounded-xl md:rounded-2xl shadow-xl md:shadow-2xl overflow-hidden p-4 md:p-6">
                     <div
                       className="cursor-pointer"
                       dangerouslySetInnerHTML={{
