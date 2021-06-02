@@ -99,9 +99,7 @@ const ProductionSteps = () => {
                 } ${key === 2 || key === 5 ? ` bg-red` : ``} `}
                 key={key}
               >
-                <h2 className={`py-2 md:py-3  `}>
-                  {box.node.blocks[0].attributes.content}
-                </h2>
+                <h3 className={``}>{box.node.blocks[0].attributes.content}</h3>
                 <p className={`py-2 md:py-3  `}>
                   {box.node.blocks[1].attributes.content}
                 </p>

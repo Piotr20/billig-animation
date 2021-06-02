@@ -75,7 +75,7 @@ const CasesShowcase = () => {
               </span>
               <input
                 ref={sliderRef}
-                className="slider"
+                className="cases-slider"
                 type="range"
                 min={15}
                 step={15}

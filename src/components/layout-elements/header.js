@@ -32,7 +32,10 @@ const Header = () => {
   return (
     <header className="w-full h-20 px-8 lg:px-10 2xl:px-24 flex items-center justify-between shadow-md fixed top-0 left-0 z-50 bg-white">
       <nav className=" flex items-center justify-between w-full h-full">
-        <Link className={`w-28 h-12 md:w-36 `} to="/">
+        <Link
+          className={`w-28 h-12 md:w-36 flex justify-center items-center `}
+          to="/"
+        >
           <Logo type="black" />
         </Link>
 
@@ -59,7 +62,7 @@ const Header = () => {
           })}
         </ul>
         <button className="md:hidden" onClick={() => setShowNav(!showNav)}>
-          <RiMenuFill className="text-3xl " />
+          <RiMenuFill className="text-6xl " />
         </button>
       </nav>
       <div
@@ -68,7 +71,7 @@ const Header = () => {
         }`}
       >
         <button className=" self-end" onClick={() => setShowNav(!showNav)}>
-          <RiCloseFill className="text-5xl mr-4 mt-4 text-white" />
+          <RiCloseFill className="text-9xl mr-5 mt-4 text-white" />
         </button>
         <ul className=" text-center text-3xl -mt-8 font-semibold ">
           {danskMenu.map((menuItem, key) => {

@@ -48,7 +48,7 @@ const WhatsIncluded = () => {
 
   const content = data.allWpPost.nodes[0].blocks;
   return (
-    <div className="w-full md:w-2/5 md:flex md:flex-col md:justify-start ">
+    <div className="w-full md:w-2/5 pb-6 md:pb-0 md:flex md:flex-col md:justify-start ">
       <div>
         <h2 className="gsap-anim-item-included">
           {content[0].attributes.content}

@@ -42,13 +42,13 @@ const IntroTextimonials = () => {
 
   return (
     <section className="container gsap-container w-full mt-36 md:mt-44 flex flex-col-reverse md:flex-row md:justify-between md:items-center">
-      <div className=" md:w-1/3 pr-12">
+      <div className=" md:w-1/3 md:pr-12 py-6 ">
         <div
-          className="py-2 md:py-4 gsap-anim-item"
+          className="py-2 md:py-4 px-4 md:px-0 gsap-anim-item"
           dangerouslySetInnerHTML={{ __html: introPost[0].saveContent }}
         />
         <div
-          className="gsap-anim-item"
+          className="gsap-anim-item px-4 md:px-0 "
           dangerouslySetInnerHTML={{ __html: introPost[1].saveContent }}
         />
       </div>

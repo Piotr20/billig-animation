@@ -73,7 +73,7 @@ const Team = () => {
               className="rounded-xl gsap-anim-item-team relative md:rounded-2xl my-8 md:my-0 shadow-lg p-4 md:p-6 flex flex-col justify-center"
             >
               <img
-                className=""
+                className=" w-full"
                 src={member.node.blocks[0].attributes.url}
                 alt={member.node.blocks[0].attributes.alt}
               />

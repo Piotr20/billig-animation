@@ -66,7 +66,7 @@ const OurHistory = () => {
             <p className="py-2 md:py-4 xl:py-8 gsap-anim-item-our-history">
               {content[1].attributes.content}
             </p>
-            <p className="py-2 italic font-semibold md:py-4 xl:py-8 gsap-anim-item-our-history">
+            <p className="py-4 italic font-semibold md:py-4 xl:py-8 gsap-anim-item-our-history">
               {content[2].attributes.content}
             </p>
           </div>

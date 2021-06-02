@@ -155,7 +155,7 @@
   border-left-color: #171717 !important;
 }
 /* The slider itself */
-.slider {
+.cases-slider {
   -webkit-appearance: none; /* Override default CSS styles */
   appearance: none;
   width: 100%; /* Full-width */
@@ -167,7 +167,7 @@
   transition: opacity 0.2s;
 }
 
-.slider {
+.cases-slider {
   -webkit-appearance: none;
   width: 200px;
   height: 15px;
@@ -179,7 +179,7 @@
   transition: opacity 0.2s;
 }
 
-.slider::-webkit-slider-thumb {
+.cases-slider::-webkit-slider-thumb {
   -webkit-appearance: none;
   appearance: none;
   width: 20px;
@@ -189,7 +189,7 @@
   cursor: pointer;
 }
 
-.slider::-moz-range-thumb {
+.cases-slider::-moz-range-thumb {
   width: 20px;
   height: 20px;
   border-radius: 50%;
