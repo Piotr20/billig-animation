@@ -56,7 +56,7 @@ const OurHistory = () => {
 
   const content = data.allWpPost.edges[0].node.blocks;
   return (
-    <section className="w-full bg-light-gray pt-8 md:pt-24 gsap-container-our-history">
+    <section className="w-full bg-light-gray py-8 md:py-24 gsap-container-our-history">
       <div className="w-full container">
         <h2 className="gsap-anim-item-our-history">
           {content[0].attributes.content}
