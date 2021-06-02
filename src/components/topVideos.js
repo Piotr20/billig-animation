@@ -96,10 +96,10 @@ const TopVideos = () => {
                       }}
                     ></div>
                     <div>
-                      <h3 className="text-left">
+                      <h3 className="text-left py-2 md:py-0">
                         {video.node.blocks[1].attributes.content}
                       </h3>
-                      <p className="text-left">
+                      <p className="text-left ">
                         {video.node.blocks[2].attributes.content}
                       </p>
                     </div>
