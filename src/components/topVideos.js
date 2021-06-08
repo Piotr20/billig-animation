@@ -87,7 +87,10 @@ const TopVideos = () => {
           >
             {videos.map((video, key) => {
               return (
-                <div key={video.node.id} className="flex justify-center">
+                <div
+                  key={video.node.id}
+                  className="flex justify-center md:mb-16"
+                >
                   <div className="w-10/12 md:w-2/3 bg-white rounded-xl md:rounded-2xl shadow-xl md:shadow-2xl overflow-hidden p-4 md:p-6">
                     <div
                       className="cursor-pointer"
@@ -110,7 +113,7 @@ const TopVideos = () => {
           </Carousel>
         </div>
         <Link
-          className="bg-black gsap-anim-item-top-videos text-lg md:text-xl xl:text-2xl self-center text-white hover:bg-white hover:text-black transition-colors duration-300 rounded-2xl md:rounded-3xl xl:rounded-4xl py-1 px-5 md:py-2 md:px-7 shadow-custom"
+          className="bg-black gsap-anim-item-top-videos md:-mt-12 text-lg md:text-xl xl:text-2xl self-center text-white hover:bg-white hover:text-black transition-colors duration-300 rounded-2xl md:rounded-3xl xl:rounded-4xl py-1 px-5 md:py-2 md:px-7 shadow-custom"
           to="/cases"
         >
           Flere cases
