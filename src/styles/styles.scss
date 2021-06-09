@@ -196,3 +196,17 @@
   background: #171717;
   cursor: pointer;
 }
+@media only screen and (min-width: 768px) {
+  .line-top {
+    &::after {
+      content: "";
+      width: 8px;
+      height: 125%;
+      background-color: #171717;
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  }
+}
