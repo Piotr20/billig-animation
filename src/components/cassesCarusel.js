@@ -71,7 +71,7 @@ const CasesShowcase = () => {
           <div className="hidden md:flex items-center">
             <div className="mx-8 border-2 border-black py-1 px-5 rounded-xl flex items-center">
               <span className="text-lg mr-4 md:text-xl xl:text-2xl font-bold flex justify-center min-w-4-letters">
-                {sliderValue}
+                Duration: {sliderValue}
               </span>
               <input
                 ref={sliderRef}
